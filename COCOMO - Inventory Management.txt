@@ -1,0 +1,18 @@
+print("COCOMO - Inventory Management System")
+print("Effort = a * (KLOC ** b)   [Person-Months]")
+print("Time   = c * (Effort ** d) [Months]")
+a = [2.4, 3.0, 3.6]
+b = [1.05, 1.12, 1.20]
+c = [2.5, 2.5, 2.5]
+d = [0.38, 0.35, 0.32]
+kloc = float(input("\nEnter KLOC: "))
+names = []
+for i in range(3):
+    name = input("Enter name of Model " + str(i + 1) + ": ")
+    names.append(name)
+print("\nModel\t\tKLOC\t\t\tEffort\t\tTime (Months)")
+print("-" * 90)
+for i in range(3):
+    effort = a[i] * (kloc ** b[i])
+    time = c[i] * (effort ** d[i])
+    print(names[i], "\t\t", kloc, "\t\t\t", round(effort, 2), "\t\t", round(time, 2)) 
